@@ -1,0 +1,347 @@
+{
+  "id": "rekordcloud.example",
+  "author": {
+    "name": "Christiaan",
+    "discordUsername": "Christiaan",
+    "email": "hi@lexicondj.com"
+  },
+  "actions": [
+    {
+      "id": "musicplayer.play",
+      "name": "Play And Add Cues",
+      "description": "This action will play the first selected track and add a cue every 4 beats after the first beatgrid marker.",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ]
+          },
+          "control": true
+        },
+        "allowParallel": false
+      }
+    },
+    {
+      "id": "musicplayer.read",
+      "name": "Music Player And Queue",
+      "description": "This action shows the currently playing track and all tracks in the queue.",
+      "config": {
+        "permissions": {}
+      }
+    },
+    {
+      "id": "customtags.suffix",
+      "name": "Suffix Tags",
+      "description": "This action adds an emoji to all Custom Tag.",
+      "config": {
+        "permissions": {
+          "customTag": {
+            "read": [
+              "all"
+            ],
+            "modify": [
+              "all"
+            ]
+          }
+        },
+        "settings": {
+          "Emoji": "🚀"
+        }
+      }
+    },
+    {
+      "id": "customtags.delete",
+      "name": "Delete Tag",
+      "description": "This action deletes a Custom Tag.",
+      "config": {
+        "permissions": {
+          "customTag": {
+            "read": [
+              "all"
+            ],
+            "delete": true
+          }
+        },
+        "settings": {
+          "Custom Tag Name": "My First Custom Tag"
+        }
+      }
+    },
+    {
+      "id": "customtags.add",
+      "name": "Add Tag",
+      "description": "This action adds a Custom Tag in a new category and assigns it to your selected tracks.",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ],
+            "modify": [
+              "selected"
+            ],
+            "modifyFields": [
+              "tags"
+            ]
+          },
+          "customTag": {
+            "read": [
+              "all"
+            ],
+            "create": true
+          }
+        },
+        "settings": {
+          "Custom Tag Name": "My First Custom Tag"
+        }
+      }
+    },
+    {
+      "id": "tracks.search",
+      "name": "Search Tracks",
+      "description": "This action efficiently searches all tracks and returns all track results",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "all"
+            ]
+          }
+        },
+        "settings": {
+          "Artist": "Andy C"
+        }
+      }
+    },
+    {
+      "id": "tracks.modify",
+      "name": "Add Emoji To Title",
+      "description": "This action adds an emoji to the titles of your selected tracks.!\n\nProtip: You can set a hotkey for any action in your Lexicon settings.",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ],
+            "modify": [
+              "selected"
+            ],
+            "modifyFields": [
+              "title"
+            ]
+          }
+        },
+        "settings": {
+          "Emoji": "🔥"
+        }
+      }
+    },
+    {
+      "id": "tracks.count",
+      "name": "Count Tracks",
+      "description": "This action returns a total count of your selected tracks and all your tracks.\n\nKeep in mind that plugins do not run on your archived tracks!\n\nProtip: You can set a hotkey for any action in your Lexicon settings.",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "all",
+              "selected"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "tracks.delete",
+      "name": "Delete Tracks",
+      "description": "This action will delete any track with an energy level of 1. Because this is a potentially dangerous action, the user will be asked to confirm before running this action.",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "all"
+            ],
+            "delete": true
+          }
+        },
+        "confirmationMessage": "This will delete tracks from your library.\nThis cannot be undone. Make sure you have a backup.\n\nAre you sure?"
+      }
+    },
+    {
+      "id": "network.get",
+      "name": "Network Request",
+      "description": "This action retrieves a random number from an online API and display it.",
+      "config": {
+        "permissions": {
+          "network": {
+            "GET": [
+              "randomnumberapi.com"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "playlist.delete",
+      "name": "Delete Playlist By Name",
+      "description": "Deletes a playlist by name. Set the name of the playlist you want to delete in the action settings.",
+      "config": {
+        "permissions": {
+          "playlist": {
+            "read": [
+              "all"
+            ],
+            "delete": true
+          }
+        },
+        "settings": {
+          "Playlist Name": null
+        }
+      }
+    },
+    {
+      "id": "playlist.tracks",
+      "name": "Add Tracks To Playlist",
+      "description": "This action will add the selected tracks to a playlist taken from the action settings and update the name with the total amount of tracks.",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ]
+          },
+          "playlist": {
+            "read": [
+              "all"
+            ],
+            "modify": [
+              "all"
+            ],
+            "modifyFields": [
+              "tracks",
+              "name"
+            ]
+          }
+        },
+        "settings": {
+          "Playlist Name": null
+        }
+      }
+    },
+    {
+      "id": "playlist.create",
+      "name": "Create Playlist",
+      "description": "This action creates a new playlist and adds the selected tracks to it",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ]
+          },
+          "playlist": {
+            "read": [
+              "all"
+            ],
+            "modify": [
+              "all"
+            ],
+            "modifyFields": [
+              "tracks"
+            ],
+            "create": true
+          }
+        }
+      }
+    },
+    {
+      "id": "smartlist.create",
+      "name": "Create Smartlists",
+      "description": "This action creates several smartlists with different kind of operators",
+      "config": {
+        "permissions": {
+          "playlist": {
+            "read": [
+              "all"
+            ],
+            "create": true
+          },
+          "track": {
+            "read": [
+              "all"
+            ]
+          },
+          "customTag": {
+            "read": [
+              "all"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "persistent.storage",
+      "name": "Persistent Storage",
+      "description": "This action stores the amount of times it has been run and shows it",
+      "config": {
+        "permissions": {
+          "storage": true
+        }
+      }
+    },
+    {
+      "id": "tracks.chatgpt",
+      "name": "Autofill With ChatGPT",
+      "description": "This action uses the artist and title of tracks to find missing info like album and year by using ChatGPT",
+      "config": {
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ],
+            "modify": [
+              "selected"
+            ],
+            "modifyFields": [
+              "albumTitle",
+              "year"
+            ]
+          },
+          "network": {
+            "POST": [
+              "openai.com"
+            ]
+          }
+        },
+        "allowParallel": true,
+        "confirmationMessage2": "Using ChatGPT with your own API key incurs costs. Use wisely!\n\nAnd keep in mind, AI can make things up, results may not be great!",
+        "settings": {
+          "ChatGPT API Key": ""
+        }
+      }
+    },
+    {
+      "id": "ui.inputdialog.text",
+      "name": "Ask User Input (Text)",
+      "description": "This action shows a blocking popup to the user to ask for text input.",
+      "config": {
+        "permissions": {},
+        "settings": {
+          "Favorite Genre": ""
+        }
+      }
+    },
+    {
+      "id": "ui.inputdialog.select",
+      "name": "Ask User Input (Select)",
+      "description": "This action shows a blocking popup to the user to select a predefined value.",
+      "config": {
+        "permissions": {},
+        "settings": {
+          "Favorite Genre": ""
+        }
+      }
+    }
+  ]
+}
