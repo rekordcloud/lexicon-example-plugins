@@ -271,6 +271,28 @@
       }
     },
     {
+      "id": "settings.dropdown",
+      "name": "Setting With Pre-defined Dropdown",
+      "description": "This action shows how to set up a setting with pre-defined values to choose from. It shows a simple setting with an array of values and an object with more options.",
+      "config": {
+        "permissions": {},
+        "settings": {
+          "Choice #1": [
+            "Foo",
+            "Bar"
+          ],
+          "Choice #2": {
+            "type": "dropdown",
+            "default": "Bar",
+            "options": [
+              "Foo",
+              "Bar"
+            ]
+          }
+        }
+      }
+    },
+    {
       "id": "smartlist.create",
       "name": "Create Smartlists",
       "description": "This action creates several smartlists with different kind of operators",
