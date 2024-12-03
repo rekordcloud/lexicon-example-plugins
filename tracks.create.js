@@ -1,4 +1,4 @@
-const tracks = await _library.track.create(['C:/Users/Chris/Music/The Prototypes - City of Gold3.mp3'])
+const tracks = await _library.track.create({ locations: ['C:/Users/Chris/Music/The Prototypes - City of Gold.mp3'] })
 
 if (!tracks || tracks.length === 0) {
   _helpers.Report(`No track was added, maybe the location does not exist or the track was already in your library?`)
