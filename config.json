@@ -153,6 +153,21 @@
       }
     },
     {
+      "id": "tracks.create",
+      "name": "Create Tracks",
+      "description": "This action will create a new track and add it to your library. ID3 tags are read automatically by Lexicon if the file is found.",
+      "config": {
+        "permissions": {
+          "track": {
+            "create": true,
+            "read": [
+              "all"
+            ]
+          }
+        }
+      }
+    },
+    {
       "id": "tracks.delete",
       "name": "Delete Tracks",
       "description": "This action will delete any track with an energy level of 1. Because this is a potentially dangerous action, the user will be asked to confirm before running this action.",
