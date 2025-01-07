@@ -19,7 +19,7 @@ const smartlist1 = await _library.playlist.create({
     matchAll: true, // Match any/all rule
     rules: [
       {
-        field: 'artist', // For all available fields and operators, see the developer API docs: ...
+        field: 'artist', // For all available fields and operators, see the developer API docs: https://www.lexicondj.com/docs/developers/api
         operator: 'StringContains',
         values: [
           'andy'
