@@ -379,6 +379,20 @@
           "Favorite Genre": ""
         }
       }
+    },
+    {
+      "id": "files",
+      "name": "Files Operations",
+      "description": "This action shows how to read, write and list files in the plugin's Files folder.",
+      "config": {
+        "permissions": {
+          "files": {
+            "list": true,
+            "write": true,
+            "read": true
+          }
+        }
+      }
     }
   ]
 }
