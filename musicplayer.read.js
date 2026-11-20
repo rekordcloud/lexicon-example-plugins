@@ -1,5 +1,3 @@
-console.log()
-
 const nowPlaying = _musicplayer.getNowPlaying()
 
 if (nowPlaying) {

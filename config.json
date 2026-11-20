@@ -27,7 +27,13 @@
       "name": "Music Player And Queue",
       "description": "This action shows the currently playing track and all tracks in the queue.",
       "config": {
-        "permissions": {}
+        "permissions": {
+          "track": {
+            "read": [
+              "selected"
+            ]
+          }
+        }
       }
     },
     {
