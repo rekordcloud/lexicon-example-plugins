@@ -217,7 +217,7 @@
           }
         },
         "settings": {
-          "Playlist Name": null
+          "Playlist Name": ""
         }
       }
     },
@@ -246,7 +246,7 @@
           }
         },
         "settings": {
-          "Playlist Name": null
+          "Playlist Name": ""
         }
       }
     },
